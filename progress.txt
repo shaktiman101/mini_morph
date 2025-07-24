@@ -1,0 +1,8 @@
+Covering https://github.com/shaktiman101/LLMs-from-scratch.git
+
+In progress:
+    ch03 - ch03.ipynb
+    (Covered till custom self-attention weights)
+    
+Completed:
+    ch02 - ch02.ipynb
