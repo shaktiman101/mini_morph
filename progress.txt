@@ -1,8 +1,10 @@
 Covering https://github.com/shaktiman101/LLMs-from-scratch.git
 
 In progress:
-    ch03 - ch03.ipynb
-    (Covered till causal self-attention weights)
+    ch06 - ch06.ipynb
     
 Completed:
-    ch02 - ch02.ipynb
+    ch02 - ch02.ipynb (Working with data)
+    ch03 - ch03.ipynb (Coding attention mechanism)
+    ch04 - ch04.ipynb (Coding LLM Architecture)
+    ch05 - ch05.ipynb (Pretraining on unlabeled data)
