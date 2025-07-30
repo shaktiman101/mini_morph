@@ -1,11 +1,12 @@
 Covering https://github.com/shaktiman101/LLMs-from-scratch.git
 
 In progress:
-    Tested DDP setup
+    Configured accelerate, deepspeed setup
     Training GPT2 model on HF FineWebEdu dataset
     ch06 - ch06.ipynb
     
 Completed:
+    Tested DDP setup
     ch02 - ch02.ipynb (Working with data)
     ch03 - ch03.ipynb (Coding attention mechanism)
     ch04 - ch04.ipynb (Coding LLM Architecture)
