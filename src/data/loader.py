@@ -34,14 +34,14 @@ class StreamingDataset(IterableDataset):
                 if len(batch_x) == self.batch_size:
                     yield torch.stack(batch_x), torch.stack(batch_y)
                     batch_x, batch_y = [], []
-                    
-def get_data_loader(dataset, split, streaming, tokenizer_name="gpt2"):
+
+
+def get_data_loaders(dataset, split, streaming, tokenizer):
     raw_dataset = load_dataset(dataset, split=split, streaming=streaming)
     
     train_stream = raw_dataset.skip(val_dataset_len) # type: ignore
     val_stream = raw_dataset.take(val_dataset_len) # type: ignore
     
-    tokenizer = AutoTokenizer.from_pretrained(tokenizer_name)
     train_dataset = StreamingDataset(train_stream, tokenizer)
     val_dataset = StreamingDataset(val_stream, tokenizer)
     
