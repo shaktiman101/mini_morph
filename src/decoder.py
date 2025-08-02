@@ -1,8 +1,22 @@
 import torch
 import torch.nn as nn
 
-from transformer_block.GPT2 import GPT2TransformerBlock
+from src.transformer_block.gpt2 import GPT2TransformerBlock
+from src.transformer_block.llama import Llama3_2TransformerBlock
+from src.transformer_block.qwen import Qwen3TransformerBlock
 from src.normalization.rms_norm import RMSNorm, compute_rope_params
+
+
+def load_transformer_block(cfg):
+    match cfg['model_name']:
+        case 'gpt2':
+            return GPT2TransformerBlock(cfg)
+        case 'llama3_2':
+            return Llama3_2TransformerBlock(cfg)
+        case 'qwen3':
+            return Qwen3TransformerBlock(cfg)
+        case _:
+            raise ValueError(f"Unsupported model name: {cfg['model_name']}")
 
 
 class DecoderBlock(nn.Module):
@@ -11,8 +25,9 @@ class DecoderBlock(nn.Module):
         self.model_name = cfg['model_name']
         self.tok_emb = nn.Embedding(cfg['vocab_size'], cfg['emb_dim'])
         
+        TransformerBlock = load_transformer_block(cfg)
         self.trf_blocks = nn.ModuleList(
-            [GPT2TransformerBlock(cfg) for _ in range(cfg['n_layers'])]
+            [TransformerBlock for _ in range(cfg['n_layers'])]
         )
         
         self.final_norm = RMSNorm(cfg['emb_dim'])

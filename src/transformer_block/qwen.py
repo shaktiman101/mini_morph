@@ -4,7 +4,7 @@ from src.attention_block.gqa import GroupedQueryAttention
 from src.ffn.swiglu import SwiGLU_FFN
 
 
-class QwenTransformerBlock(nn.Module):
+class Qwen3TransformerBlock(nn.Module):
     def __init__(self, cfg):
         super().__init__()
         self.gqa = GroupedQueryAttention(cfg)

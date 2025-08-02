@@ -42,7 +42,7 @@ def train(model, train_loader, val_loader, n_epochs, optimizer, tokenizer, max_n
 
 
 if __name__ == "__main__":
-    config_file = r"D:\PythonProjects\llm-training\mini_morph\configs\models\custom.yaml"
+    config_file = r"D:\PythonProjects\llm-training\mini_morph\models\gpt2.yaml"
     with open(config_file, 'r') as file:
         config = yaml.safe_load(file)
     print(config)
