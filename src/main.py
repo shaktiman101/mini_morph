@@ -1,4 +1,5 @@
 import yaml
+import argparse
 
 import torch
 import torch.nn as nn
@@ -42,11 +43,17 @@ def train(model, train_loader, val_loader, n_epochs, optimizer, tokenizer, max_n
 
 
 if __name__ == "__main__":
-    config_file = r"D:\PythonProjects\llm-training\mini_morph\models\gpt2.yaml"
+    import sys
+    parser = argparse.ArgumentParser(description="Train a transformer model from scratch using native Pytorch.")
+    parser.add_argument('--config', type=str, default='gpt2.yaml', required=True, help='Path to model configuration file.')
+    args = parser.parse_args()
+    
+    # config_file = r"D:\PythonProjects\llm-training\mini_morph\models\gpt2.yaml"
+    config_file = args.config
     with open(config_file, 'r') as file:
         config = yaml.safe_load(file)
     print(config)
-    
+    sys.exit(0)
     if config['dtype'] == 'bfloat16':
         config['dtype'] = torch.bfloat16
     else:
