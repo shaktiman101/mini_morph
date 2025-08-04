@@ -1,7 +1,7 @@
 Covering https://github.com/shaktiman101/LLMs-from-scratch.git
 
 In progress:
-  
+    LoRA
     Training GPT2 model on HF FineWebEdu dataset
     ch06 - ch06.ipynb
     
