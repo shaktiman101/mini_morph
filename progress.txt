@@ -2,15 +2,16 @@ Covering https://github.com/shaktiman101/LLMs-from-scratch.git
 
 In progress:
     pre-training using litgpt
-    Training GPT2 model on HF FineWebEdu dataset
     ch06 - ch06.ipynb
     
 Completed:
     LoRA
-    Finished SFT training
+    Finished SFT training docs
+    Training GPT2 model on HF FineWebEdu dataset
     Configured accelerate, deepspeed setup
     Tested DDP setup
     ch02 - ch02.ipynb (Working with data)
     ch03 - ch03.ipynb (Coding attention mechanism)
     ch04 - ch04.ipynb (Coding LLM Architecture)
     ch05 - ch05.ipynb (Pretraining on unlabeled data)
+    ch07 - ch07.ipynb
