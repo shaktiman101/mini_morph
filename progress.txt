@@ -1,6 +1,7 @@
 Covering https://github.com/shaktiman101/LLMs-from-scratch.git
 
 In progress:
+    SmolLM3 training blog
     pre-training using litgpt
     ch06 - ch06.ipynb
     
