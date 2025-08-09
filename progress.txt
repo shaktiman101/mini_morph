@@ -2,7 +2,7 @@ Covering https://github.com/shaktiman101/LLMs-from-scratch.git
 
 In progress:
     Setup script to upload checkpoints to blob storage
-    SmolLM3 training blog
+    SmolLM3 training blog (pre-training, mid-training covered)
     pre-training using litgpt
     ch06 - ch06.ipynb
     
